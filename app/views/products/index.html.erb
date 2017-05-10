@@ -1,0 +1,10 @@
+<h4>Available Products</h4>
+<div class="container">
+  <div class="row">
+  <% @products.each do |product| %>
+    <div class="listImage">
+      <%= link_to(image_tag(product.image), product_path(product)) %>
+    </div>
+  <% end %>
+  </div>
+</div>

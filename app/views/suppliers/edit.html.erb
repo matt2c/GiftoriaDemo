@@ -1,0 +1,41 @@
+<h1>Edit Profile</h1>
+<%= form_for(@supplier, :html => { :multipart => true }, url: "/suppliers/#{@supplier.id}")   do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :industry %>
+    <%= f.text_field :industry %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password, required: true %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, required: true %>
+  </p>
+  <p>
+    <%= f.label :phone %>
+    <%= f.number_field :phone %>
+  </p>
+  <p>
+    <%= f.label :website %>
+    <%= f.url_field :website %>
+  </p>
+  <p>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </p>
+  <%= f.submit "Update Profile" %>
+<% end %>

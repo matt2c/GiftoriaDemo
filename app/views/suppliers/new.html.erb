@@ -1,0 +1,50 @@
+<h1>SIGN UP</h1>
+<% unless @supplier.errors.full_messages.empty? %>
+
+  <% @supplier.errors.full_messages.each do |msg| %>
+    <p>
+      <%= msg %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= form_for @supplier do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+  </p>
+  <p>
+    <%= f.label :industry %>
+    <%= f.text_field :industry %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email, required: true %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password, required: true %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, required: true %>
+  </p>
+  <p>
+    <%= f.label :phone %>
+    <%= f.number_field :phone %>
+  </p>
+  <p>
+    <%= f.label :website %>
+    <%= f.url_field :website %>
+  </p>
+  <p>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+  </p>
+  <%= f.submit "Sign Up"%>
+
+  <% end %>

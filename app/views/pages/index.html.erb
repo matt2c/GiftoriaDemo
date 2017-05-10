@@ -1,0 +1,86 @@
+<style type="text/css">
+.bgimg {
+    background-image: url('../images/pic2.jpg');
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div style="background-image: url(http://i.imgur.com/Xb2mWuD.jpg); width: 1151px; height: 950px;">
+
+        <div class="container" width: 40%;>
+           <div class="row center">
+           <h5 class="header col s12 light">What occasion you looking to buy a gift?</h5>
+           </div>
+          <%= form_tag(products_path, method: :get) do %>
+          <%= text_field_tag :occasion  %>
+          <%= submit_tag 'Search', {:class => "searchButton btn-floating btn-large waves-effect red", required: true} %>
+          <% end %>
+        </div>
+      <br><br>
+
+    </div>
+</div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">loyalty</i></h2>
+            <h5 class="center">Loyalty</h5>
+
+            <p class="light">We have to recognize that there cannot be relationships unless there is commitment, unless there is loyalty, unless there is love, patience, persistence.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">store</i></h2>
+            <h5 class="center">Variable Stores</h5>
+
+            <p class="light">Variable products from variety of regional stores and suppliers makes it easy to find the right gift for the right person, which our App provides it with ease. </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">thumb_up</i></h2>
+            <h5 class="center">Your Feedback</h5>
+
+            <p class="light">We have provided this App for you to ease your life and strengh your relationships by choosing right gifts for lovers.Your feedbacks are essential to make it better.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer red accent-2">
+
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="white-text text-lighten-3" href="http://materializecss.com"> Matt Toussi</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  </body>
+</html>

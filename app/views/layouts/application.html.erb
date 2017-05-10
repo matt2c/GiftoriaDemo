@@ -1,14 +1,53 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>GiftoriaApp</title>
-    <%= csrf_meta_tags %>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>GiftoriaApp</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <%= flash[:error] %>
+  <nav class="red accent-2" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Giftoria</a>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/about" class="btn-small waves-effect waves-light">ABOUT</a></li>
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/about" class="btn-small waves-effect waves-light">ABOUT</a></li>
+      </ul>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/contact" class="btn-small waves-effect waves-light">CONTACT</a></li>
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/contact" class="btn-small waves-effect waves-light">CONTACT</a></li>
+      </ul>
+
+      <% if @current_supplier %>
+        <ul class="right hide-on-med-and-down"><%= link_to "Log Out", "/logout", method: :delete %> </ul>
+        <ul class="right hide-on-med-and-down"><%= link_to @current_supplier.email, supplier_path(@current_supplier) %> </ul>
+        <ul class="right hide-on-med-and-down"><%= link_to "Edit Profile", edit_supplier_path(@current_supplier) %> </ul>
+      <% else %>
+         <ul class="right hide-on-med-and-down">
+           <li><a href="/login" class="btn-small waves-effect waves-light ">Login</a></li>
+         </ul>
+         <ul class="right hide-on-med-and-down">
+           <li><a href="/suppliers/new" class="btn-small waves-effect waves-light ">Sign Up</a></li>
+         </ul>
+
+      <% end %>
+
+
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+      <%= yield %>
+  </html>

@@ -1,0 +1,21 @@
+<h1><%= @product.name %></h1>
+
+<%= image_tag( @product.image ) %>
+
+<ul>
+  <li>Name: <%= @product.name %></li>
+  <li>Category: <%= @product.category %></li>
+  <li>Occasion: <%= @product.occasion %></li>
+  <li>Description: <%= @product.description %></li>
+  <li>Price: <%= @product.price %></li>
+
+</ul>
+<%= session["important"] %>
+
+<%  if @current_supplier.present? && @current_supplier.id == @supplier.id %>
+    <div class="controls">
+      <%= link_to("Edit Product", "/products/#{@product.id}/edit") %>
+      <%= link_to("Delete Product", "/products/#{@product.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
+    </div>
+
+<% end %>

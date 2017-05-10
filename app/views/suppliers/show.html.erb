@@ -1,0 +1,29 @@
+<h1><%= @supplier.name %></h1>
+<!-- <p>
+  Password Digest: <%= @supplier.password_digest %>
+</p> -->
+
+<%= image_tag( @supplier.image ) %>
+
+<ul>
+  <li>Industry: <%= @supplier.industry %></li>
+  <li>Phone: <%= @supplier.phone %></li>
+  <li>Email: <%= @supplier.email %></li>
+  <li>Website: <%= @supplier.website %></li>
+  <li>Location: <%= @supplier.location %></li>
+</ul>
+<div class="container" width: 40%;>
+   <div class="row center">
+     <a href="/products/new" class="waves-effect waves-light btn red">Add New </a>
+</div>
+
+
+<h2> Products List </h2>
+
+<ul>
+  <% @supplier.products.each do |product| %>
+    <div class="listImage" >
+      <%= link_to(image_tag(product.image), "/products/#{product.id}") %>
+    </div>
+  <% end %>
+</ul>

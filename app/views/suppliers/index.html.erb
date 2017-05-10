@@ -1,0 +1,21 @@
+
+<h1><%= @supplier.name %></h1>
+<p>
+  Password Digest: <%= @supplier.password_digest %>
+</p>
+<%= image_tag( @supplier.image ) %>
+
+<ul>
+  <li>Industry: <%= @supplier.industry %></li>
+  <li>Phone: <%= @supplier.phone %></li>
+  <li>Email: <%= @supplier.email %></li>
+  <li>Website: <%= @supplier.website %></li>
+  <li>Location: <%= @supplier.location %></li>
+
+</ul>
+<%= session["important"] %>
+
+<div class="controls">
+  <%= link_to("Edit Profile", "/suppliers/#{@supplier.id}/edit") %>
+  <%= link_to("Delete Profile", "/suppliers/#{@supplier.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
+</div>

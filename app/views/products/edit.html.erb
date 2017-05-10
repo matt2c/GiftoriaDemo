@@ -1,0 +1,30 @@
+<h1>Edit Product</h1>
+
+<%= form_for @product, url: "/products/#{@product.id}" do |f| %>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+</p>
+<p>
+  <%= f.label :category %>
+  <%= f.text_field :category, required: true %>
+</p>
+<p>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+</p>
+<p>
+  <%= f.label :occasion %>
+  <%= f.text_field :occasion, required: true %>
+</p>
+<p>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+</p>
+<p>
+  <%= f.label :image %>
+  <%= f.url_field :image, required: true %>
+</p>
+<%= f.submit "Update Product"%>
+
+<% end %>
